@@ -14,8 +14,19 @@ var timer = setInterval(function(){
    /* console.log(__dirname);
     console.log(__filename);*/
 
-var stuff = require ('./stuff');
+/*var stuff = require ('./stuff');
 
 console.log(stuff.counter(['sharon','joy','mercy']));
 console.log(stuff.adder(5,6));
-console.log(stuff.adder (stuff.pie,12));
+console.log(stuff.adder (stuff.pie,12)); */
+
+
+var events = require ('events');
+
+var myEmitter = new events.EventEmitter ();
+
+myEmitter.on('Some Event', function(mssg){
+    console.log(mssg)
+});
+
+myEmitter.emit ('Some Event', 'the event was emitted');
